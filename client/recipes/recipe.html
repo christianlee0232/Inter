@@ -1,0 +1,28 @@
+<!--declaring template name-->
+<template name="recipe">
+    <!--article = independent, self-contained content. like a blog or news story-->
+    <!-- if inMenu set to true, we want class of in-menu to display in /recipe/ from styles.styl-->
+    <article class="recipe {{#if inMenu}}in-menu{{/if}}">
+       <!--<h3> refers to smaller sized headers-->
+       <!-- name = refers to the specified name for the recipe-->
+       <h3>{{name}}</h3>
+       <!--<p> refers to Paragraphs-->
+       <!-- desc = refers to the specified description for the recipe-->
+       <p>{{desc}}</p>
+       <p>
+            <!-- {{#each}} renders each and every ingredient-->
+            {{#each ingredient}}
+            <!--<span> groups elements on the same line, in doc-->   
+                <span class="ingredient">{{name}} - {{amount}}</span>
+            {{/each}}
+       </p>
+       <!--<a> refers to hyperlink-->
+       <!--View detail = name of button that leads to hyperlink-->
+       <a href="/recipe/{{_id}}">View Details</a>
+       <!--btn-primary/deny refers to button layout in styles.styl-->
+       <!--toggle-menu takes recipe on and off menu-->
+       <!-- add/remove from menu-->
+       <button class="btn-primary toggle-menu">Add To Menu</button>
+       <button class="btn-deny toggle-menu">Remove From Menu</button>
+    </article>
+</template>

@@ -1,0 +1,12 @@
+<!-- declaring template name-->
+<template name="mainLayout">
+    <!--refers to header.html-->
+    {{>header}}
+    <!--refers to sideNav.html-->
+    {{>sideNav}}
+    <!--refers to main-layout from style.styl-->
+    <main class="main-layout">
+        <!--Allows for page specific html in mainlayout-->
+        {{>Template.dynamic template=main}}
+    </main>
+</template>
